@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contra — Settings</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="app-body">
+
+  <header class="topbar">
+    <div class="topbar-left">
+      <a href="dashboard.html" class="logo">
+        <span class="logo-mark">◆</span>
+        <span class="logo-text">CONTRA</span>
+      </a>
+    </div>
+    <div class="topbar-title">Settings</div>
+    <div class="topbar-right">
+      <div class="avatar" id="topAvatar">?</div>
+    </div>
+  </header>
+
+  <div class="app-shell">
+
+    <aside class="sidebar">
+      <div class="player-card">
+        <div class="avatar avatar-lg" id="sideAvatar">?</div>
+        <div class="player-info">
+          <div class="player-name" id="playerName">Loading…</div>
+          <div class="player-tag" id="playerEmail">—</div>
+        </div>
+      </div>
+
+      <div class="level-box">
+        <div class="level-head">
+          <span class="level-label">RANK</span>
+          <span class="level-num" id="levelNum">—</span>
+        </div>
+        <div class="current-game-badge" id="currentGame">CS2</div>
+        <div class="elo-bar">
+          <div class="elo-fill" id="eloFill" style="width: 0%"></div>
+        </div>
+        <div class="elo-row">
+          <span id="eloValue">— ELO</span>
+          <span class="elo-next" id="eloNext">→ —</span>
+        </div>
+      </div>
+
+      <button class="play-btn" id="playBtn">
+        <span class="play-icon">▶</span> PLAY
+      </button>
+
+      <nav class="side-nav">
+        <a href="dashboard.html" class="side-link">📊 Overview</a>
+        <a href="ranking.html" class="side-link">🏆 Rankings</a>
+        <a href="history.html" class="side-link">📜 History</a>
+        <a href="settings.html" class="side-link active">⚙️ Settings</a>
+      </nav>
+
+      <button id="logout" class="logout-btn">Logout</button>
+    </aside>
+
+    <main class="main-content">
+
+      <section class="hero-card">
+        <div class="hero-left">
+          <p class="hero-eyebrow">ACCOUNT</p>
+          <h1 class="hero-title">Settings</h1>
+          <p class="hero-sub">Manage your Contra profile and preferences.</p>
+        </div>
+      </section>
+
+      <section class="panel">
+        <div class="panel-head"><h2>Profile</h2></div>
+        <div class="settings-grid">
+
+          <div class="setting-row avatar-row">
+            <div class="avatar-upload-block">
+              <div class="avatar avatar-xl" id="settingsAvatar">?</div>
+              <div class="avatar-upload-info">
+                <div class="setting-label">Profile Picture</div>
+                <div class="setting-value">PNG, JPG or GIF · max 2 MB</div>
+                <div class="avatar-actions">
+                  <label for="avatarInput" class="avatar-btn primary">Upload</label>
+                  <input type="file" id="avatarInput" accept="image/*" hidden>
+                  <button class="avatar-btn" id="removeAvatar" type="button">Remove</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="setting-row" data-setting="name">
+            <div class="setting-info">
+              <div class="setting-label">Display Name</div>
+              <div class="setting-value" id="settingsName">—</div>
+              <div class="setting-input-wrap hidden">
+                <input type="text" id="inputName" maxlength="32" placeholder="Your name">
+              </div>
+            </div>
+            <div class="setting-actions">
+              <button class="setting-btn" id="editNameBtn" type="button">Edit</button>
+              <button class="setting-btn primary hidden" id="saveNameBtn" type="button">Save</button>
+              <button class="setting-btn hidden" id="cancelNameBtn" type="button">Cancel</button>
+            </div>
+          </div>
+
+          <div class="setting-row" data-setting="email">
+            <div class="setting-info">
+              <div class="setting-label">Email</div>
+              <div class="setting-value" id="settingsEmail">—</div>
+              <div class="setting-input-wrap hidden">
+                <input type="email" id="inputEmail" placeholder="you@example.com">
+              </div>
+            </div>
+            <div class="setting-actions">
+              <button class="setting-btn" id="editEmailBtn" type="button">Change</button>
+              <button class="setting-btn primary hidden" id="saveEmailBtn" type="button">Save</button>
+              <button class="setting-btn hidden" id="cancelEmailBtn" type="button">Cancel</button>
+            </div>
+          </div>
+
+          <div class="setting-row">
+            <div class="setting-info">
+              <div class="setting-label">Password</div>
+              <div class="setting-value">••••••••</div>
+            </div>
+            <div class="setting-actions">
+              <button class="setting-btn" id="openPasswordBtn" type="button">Update</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel">
+        <div class="panel-head"><h2>Preferences</h2></div>
+        <div class="settings-grid">
+
+          <div class="setting-row" data-setting="region">
+            <div class="setting-info">
+              <div class="setting-label">Region</div>
+              <div class="setting-value" id="settingsRegion">SEA — Southeast Asia</div>
+              <div class="setting-input-wrap hidden">
+                <select id="inputRegion" class="setting-select">
+                  <option value="NA — North America">NA — North America</option>
+                  <option value="EU — Europe">EU — Europe</option>
+                  <option value="SEA — Southeast Asia" selected>SEA — Southeast Asia</option>
+                  <option value="OCE — Oceania">OCE — Oceania</option>
+                  <option value="SA — South America">SA — South America</option>
+                </select>
+              </div>
+            </div>
+            <div class="setting-actions">
+              <button class="setting-btn" id="editRegionBtn" type="button">Change</button>
+              <button class="setting-btn primary hidden" id="saveRegionBtn" type="button">Save</button>
+              <button class="setting-btn hidden" id="cancelRegionBtn" type="button">Cancel</button>
+            </div>
+          </div>
+
+          <div class="setting-row notification-row">
+            <div class="setting-info">
+              <div class="setting-label">Notifications</div>
+              <div class="toggle-list">
+                <label class="toggle-row">
+                  <span>Match Invites</span>
+                  <input type="checkbox" data-notif="matchInvites" checked>
+                  <span class="toggle-switch"></span>
+                </label>
+                <label class="toggle-row">
+                  <span>Rank Changes</span>
+                  <input type="checkbox" data-notif="rankChanges" checked>
+                  <span class="toggle-switch"></span>
+                </label>
+                <label class="toggle-row">
+                  <span>Friend Requests</span>
+                  <input type="checkbox" data-notif="friendRequests">
+                  <span class="toggle-switch"></span>
+                </label>
+                <label class="toggle-row">
+                  <span>Weekly Recap</span>
+                  <input type="checkbox" data-notif="weeklyRecap">
+                  <span class="toggle-switch"></span>
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <div class="setting-row games-row">
+            <div class="setting-info">
+              <div class="setting-label">Preferred Games</div>
+              <div class="setting-value">Click to toggle</div>
+              <div class="pref-games" id="prefGames">
+                <button class="pref-chip" data-game="cs2" type="button">CS2</button>
+                <button class="pref-chip" data-game="cs16" type="button">CS 1.6</button>
+                <button class="pref-chip" data-game="cod" type="button">COD</button>
+                <button class="pref-chip" data-game="apex" type="button">APEX</button>
+                <button class="pref-chip" data-game="r6" type="button">R6</button>
+                <button class="pref-chip" data-game="halo" type="button">HALO</button>
+                <button class="pref-chip" data-game="valorant" type="button">VALORANT</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel">
+        <div class="panel-head"><h2>Danger Zone</h2></div>
+        <div class="settings-grid">
+          <div class="setting-row danger">
+            <div class="setting-info">
+              <div class="setting-label">Sign out of all devices</div>
+              <div class="setting-value">Revoke all active sessions</div>
+            </div>
+            <div class="setting-actions">
+              <button class="setting-btn danger" id="openSignOutAllBtn" type="button">Sign out</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contra — Match History</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="app-body">
+
+  <header class="topbar">
+    <div class="topbar-left">
+      <a href="dashboard.html" class="logo">
+        <span class="logo-mark">◆</span>
+        <span class="logo-text">CONTRA</span>
+      </a>
+    </div>
+    <div class="topbar-title">Match History</div>
+    <div class="topbar-right">
+      <div class="avatar" id="topAvatar">?</div>
+    </div>
+  </header>
+
+  <div class="app-shell">
+
+    <aside class="sidebar">
+      <div class="player-card">
+        <div class="avatar avatar-lg" id="sideAvatar">?</div>
+        <div class="player-info">
+          <div class="player-name" id="playerName">Loading…</div>
+          <div class="player-tag" id="playerEmail">—</div>
+        </div>
+      </div>
+
+      <div class="level-box">
+        <div class="level-head">
+          <span class="level-label">RANK</span>
+          <span class="level-num" id="levelNum">—</span>
+        </div>
+        <div class="current-game-badge" id="currentGame">CS2</div>
+        <div class="elo-bar">
+          <div class="elo-fill" id="eloFill" style="width: 0%"></div>
+        </div>
+        <div class="elo-row">
+          <span id="eloValue">— ELO</span>
+          <span class="elo-next" id="eloNext">→ —</span>
+        </div>
+      </div>
+
+      <button class="play-btn" id="playBtn">
+        <span class="play-icon">▶</span> PLAY
+      </button>
+
+      <nav class="side-nav">
+        <a href="dashboard.html" class="side-link">📊 Overview</a>
+        <a href="ranking.html" class="side-link">🏆 Rankings</a>
+        <a href="history.html" class="side-link active">📜 History</a>
+        <a href="settings.html" class="side-link">⚙️ Settings</a>
+      </nav>
+
+      <button id="logout" class="logout-btn">Logout</button>
+    </aside>
+
+    <main class="main-content">
+
+      <section class="hero-card">
+        <div class="hero-left">
+          <p class="hero-eyebrow">MATCH HISTORY</p>
+          <h1 class="hero-title">Every <span>battle.</span></h1>
+          <p class="hero-sub">
+            Your full 5v5 competitive record across all supported titles.
+          </p>
+        </div>
+        <div class="hero-right">
+          <div class="hero-elo">
+            <span class="hero-elo-num">47</span>
+            <span class="hero-elo-label">MATCHES</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel">
+        <div class="panel-head">
+          <h2>All Matches</h2>
+          <span class="panel-link" style="cursor:default">Last 30 days</span>
+        </div>
+        <ul class="match-list" id="matchHistory"></ul>
+      </section>
+
+    </main>
+  </div>
+
+  <script src="app.js"></script>
+  <script src="history.js"></script>
+</body>
+</html>

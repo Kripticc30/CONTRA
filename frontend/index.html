@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contra — Competitive Matchmaking</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="auth-body">
+
+  <div class="auth-shell">
+
+    <section class="auth-brand">
+      <div class="brand-logo">
+        <span class="logo-mark">◆</span>
+        <span class="logo-text">CONTRA</span>
+      </div>
+
+      <h1 class="brand-title">Different game.<br><span>Same arena.</span></h1>
+      <p class="brand-sub">
+        Competitive 5v5 matchmaking for CS2, CS 1.6, Call of Duty, Apex Legends,
+        Rainbow Six Siege, Halo, and Valorant. One rank. Same arena.
+      </p>
+
+      <ul class="brand-features">
+        <li><span class="dot"></span> 5v5 competitive matchmaking</li>
+        <li><span class="dot"></span> CS2-style map veto</li>
+        <li><span class="dot"></span> Real-time Elo tracking</li>
+      </ul>
+
+      <div class="brand-games">
+        <span class="game-chip">CS2</span>
+        <span class="game-chip">CS 1.6</span>
+        <span class="game-chip">COD</span>
+        <span class="game-chip">APEX</span>
+        <span class="game-chip">R6 SIEGE</span>
+        <span class="game-chip">HALO</span>
+        <span class="game-chip">VALORANT</span>
+      </div>
+
+      <div class="brand-footer">© 2026 Contra. All rights reserved.</div>
+    </section>
+
+    <section class="auth-panel">
+      <div class="glass-card">
+
+        <form id="loginForm">
+          <h2 class="auth-title">Welcome back</h2>
+          <p class="auth-sub">Sign in to continue to your dashboard</p>
+
+          <label for="email">Email</label>
+          <input type="email" id="email" placeholder="you@example.com" required>
+
+          <label for="password">Password</label>
+          <input type="password" id="password" placeholder="••••••••" required>
+
+          <button type="submit" class="btn-primary">Sign In</button>
+          <p id="message" class="auth-msg"></p>
+
+          <p class="auth-switch">
+            Don't have an account?
+            <a href="#" id="showRegister">Create one</a>
+          </p>
+        </form>
+
+        <form id="registerForm" class="hidden">
+          <h2 class="auth-title">Create account</h2>
+          <p class="auth-sub">Join Contra and start climbing</p>
+
+          <label for="name">Name</label>
+          <input type="text" id="name" placeholder="Your gamer tag" required>
+
+          <label for="regEmail">Email</label>
+          <input type="email" id="regEmail" placeholder="you@example.com" required>
+
+          <label for="regPassword">Password</label>
+          <input type="password" id="regPassword" placeholder="At least 6 characters" required>
+
+          <button type="submit" class="btn-primary">Create Account</button>
+          <p id="registerMessage" class="auth-msg"></p>
+
+          <p class="auth-switch">
+            Already have an account?
+            <a href="#" id="showLogin">Sign in</a>
+          </p>
+        </form>
+
+      </div>
+    </section>
+
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

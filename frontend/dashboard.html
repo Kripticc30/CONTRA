@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contra — Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="app-body">
+
+  <header class="topbar">
+    <div class="topbar-left">
+      <a href="dashboard.html" class="logo">
+        <span class="logo-mark">◆</span>
+        <span class="logo-text">CONTRA</span>
+      </a>
+    </div>
+    <div class="topbar-title">Overview</div>
+    <div class="topbar-right">
+      <div class="avatar" id="topAvatar">?</div>
+    </div>
+  </header>
+
+  <div class="app-shell">
+
+    <aside class="sidebar">
+      <div class="player-card">
+        <div class="avatar avatar-lg" id="sideAvatar">?</div>
+        <div class="player-info">
+          <div class="player-name" id="playerName">Loading…</div>
+          <div class="player-tag" id="playerEmail">—</div>
+        </div>
+      </div>
+
+      <div class="level-box">
+        <div class="level-head">
+          <span class="level-label">RANK</span>
+          <span class="level-num" id="levelNum">—</span>
+        </div>
+        <div class="current-game-badge" id="currentGame">CS2</div>
+        <div class="elo-bar">
+          <div class="elo-fill" id="eloFill" style="width: 0%"></div>
+        </div>
+        <div class="elo-row">
+          <span id="eloValue">— ELO</span>
+          <span class="elo-next" id="eloNext">→ —</span>
+        </div>
+      </div>
+
+      <button class="play-btn" id="playBtn">
+        <span class="play-icon">▶</span> PLAY
+      </button>
+
+      <nav class="side-nav">
+        <a href="dashboard.html" class="side-link active">📊 Overview</a>
+        <a href="ranking.html" class="side-link">🏆 Rankings</a>
+        <a href="history.html" class="side-link">📜 History</a>
+        <a href="settings.html" class="side-link">⚙️ Settings</a>
+      </nav>
+
+      <button id="logout" class="logout-btn">Logout</button>
+    </aside>
+
+    <main class="main-content">
+
+      <section class="hero-card">
+        <div class="hero-left">
+          <p class="hero-eyebrow">CURRENT RANK · CS2</p>
+          <h1 class="hero-title" id="heroLevel">—</h1>
+          <p class="hero-sub" id="welcome">Loading…</p>
+        </div>
+        <div class="hero-right">
+          <div class="hero-elo">
+            <span class="hero-elo-num" id="heroElo">—</span>
+            <span class="hero-elo-label">ELO</span>
+          </div>
+          <div class="hero-rank-badge" id="heroRank" data-tier="gold">—</div>
+        </div>
+      </section>
+
+      <section class="stat-grid">
+        <div class="stat-tile">
+          <div class="stat-label">MATCHES PLAYED</div>
+          <div class="stat-value">47</div>
+          <div class="stat-sub">Last 30 days</div>
+        </div>
+        <div class="stat-tile">
+          <div class="stat-label">WIN RATE</div>
+          <div class="stat-value accent">61%</div>
+          <div class="stat-sub">29W · 18L</div>
+        </div>
+        <div class="stat-tile">
+          <div class="stat-label">AVG K/D</div>
+          <div class="stat-value">1.24</div>
+          <div class="stat-sub">+0.08 vs last week</div>
+        </div>
+        <div class="stat-tile">
+          <div class="stat-label">HS %</div>
+          <div class="stat-value">52%</div>
+          <div class="stat-sub">Rifle accuracy</div>
+        </div>
+      </section>
+
+      <section class="panel">
+        <div class="panel-head">
+          <h2>Recent Matches</h2>
+          <a href="history.html" class="panel-link">View all →</a>
+        </div>
+        <ul class="match-list" id="matchList"></ul>
+      </section>
+
+    </main>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contra — Rankings</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="app-body">
+
+  <header class="topbar">
+    <div class="topbar-left">
+      <a href="dashboard.html" class="logo">
+        <span class="logo-mark">◆</span>
+        <span class="logo-text">CONTRA</span>
+      </a>
+    </div>
+    <div class="topbar-title">Rankings</div>
+    <div class="topbar-right">
+      <div class="avatar" id="topAvatar">?</div>
+    </div>
+  </header>
+
+  <div class="app-shell">
+
+    <aside class="sidebar">
+      <div class="player-card">
+        <div class="avatar avatar-lg" id="sideAvatar">?</div>
+        <div class="player-info">
+          <div class="player-name" id="playerName">Loading…</div>
+          <div class="player-tag" id="playerEmail">—</div>
+        </div>
+      </div>
+
+      <div class="level-box">
+        <div class="level-head">
+          <span class="level-label">RANK</span>
+          <span class="level-num" id="levelNum">—</span>
+        </div>
+        <div class="current-game-badge" id="currentGame">CS2</div>
+        <div class="elo-bar">
+          <div class="elo-fill" id="eloFill" style="width: 0%"></div>
+        </div>
+        <div class="elo-row">
+          <span id="eloValue">— ELO</span>
+          <span class="elo-next" id="eloNext">→ —</span>
+        </div>
+      </div>
+
+      <button class="play-btn" id="playBtn">
+        <span class="play-icon">▶</span> PLAY
+      </button>
+
+      <nav class="side-nav">
+        <a href="dashboard.html" class="side-link">📊 Overview</a>
+        <a href="ranking.html" class="side-link active">🏆 Rankings</a>
+        <a href="history.html" class="side-link">📜 History</a>
+        <a href="settings.html" class="side-link">⚙️ Settings</a>
+      </nav>
+
+      <button id="logout" class="logout-btn">Logout</button>
+    </aside>
+
+    <main class="main-content">
+
+      <section class="hero-card">
+        <div class="hero-left">
+          <p class="hero-eyebrow">RANK SYSTEM</p>
+          <h1 class="hero-title">Climb the <span>ladder.</span></h1>
+          <p class="hero-sub">
+            Seven tiers. Five sublevels each. Earn Elo, outplay opponents,
+            and prove you belong at the top.
+          </p>
+        </div>
+        <div class="hero-right">
+          <div class="hero-rank-badge" style="--tier:#DE9B35">35 RANKS TOTAL</div>
+        </div>
+      </section>
+
+      <section class="panel">
+        <div class="panel-head">
+          <h2>Tier Ladder</h2>
+          <span class="panel-link" style="cursor:default">Bronze → Challenger</span>
+        </div>
+        <div class="tier-list" id="tierList"></div>
+      </section>
+
+      <section class="panel">
+        <div class="panel-head">
+          <h2>How to Rank Up</h2>
+        </div>
+        <div class="how-grid">
+          <div class="how-card">
+            <div class="how-icon">🎯</div>
+            <h3>Win Matches</h3>
+            <p>Every 5v5 competitive win awards Elo. Losses deduct Elo. Consistent wins are the fastest path upward.</p>
+          </div>
+          <div class="how-card">
+            <div class="how-icon">📈</div>
+            <h3>Improve Your Rating</h3>
+            <p>Performance matters. Higher K/D, damage, and objective play can earn bonus Elo on close games.</p>
+          </div>
+          <div class="how-card">
+            <div class="how-icon">🛡️</div>
+            <h3>Avoid Losing Streaks</h3>
+            <p>Consecutive losses reduce Elo faster. Take breaks, reset, and requeue fresh.</p>
+          </div>
+          <div class="how-card">
+            <div class="how-icon">🏆</div>
+            <h3>Climb Each Sublevel</h3>
+            <p>Each tier has 5 sublevels: V → IV → III → II → I. Reach I to promote to the next tier.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel">
+        <div class="panel-head">
+          <h2>Elo Thresholds</h2>
+        </div>
+        <div class="threshold-table">
+          <div class="th-row th-head">
+            <span>Tier</span>
+            <span>Entry Elo</span>
+            <span>Sublevels</span>
+          </div>
+          <div class="th-row"><span class="tier-pill" style="--tier:#A97142">🥉 BRONZE</span><span>0</span><span>V → I</span></div>
+          <div class="th-row"><span class="tier-pill" style="--tier:#C0C0C0">🥈 SILVER</span><span>900</span><span>V → I</span></div>
+          <div class="th-row"><span class="tier-pill" style="--tier:#DE9B35">🥇 GOLD</span><span>1,500</span><span>V → I</span></div>
+          <div class="th-row"><span class="tier-pill" style="--tier:#A855F7">💜 AMETHYST</span><span>2,100</span><span>V → I</span></div>
+          <div class="th-row"><span class="tier-pill" style="--tier:#E0115F">❤️ RUBY</span><span>2,600</span><span>V → I</span></div>
+          <div class="th-row"><span class="tier-pill" style="--tier:#5EEAD4">💎 DIAMOND</span><span>3,000</span><span>V → I</span></div>
+          <div class="th-row"><span class="tier-pill" style="--tier:#FF2D55">👑 CHALLENGER</span><span>3,500+</span><span>V → I</span></div>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <script src="app.js"></script>
+  <script src="ranking.js"></script>
+</body>
+</html>
