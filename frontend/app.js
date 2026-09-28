@@ -4,7 +4,7 @@
 const API_URL = 
   (window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1")
     ? "http://localhost:5000"
-    : "https://login-system-r1ax.onrender.com";
+    : "https://contra-backend-tifu.onrender.com";
 
 /* ============================================================
    GAMES + 7-MAP POOLS

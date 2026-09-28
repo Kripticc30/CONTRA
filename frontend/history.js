@@ -7,7 +7,7 @@ const historyEl = document.getElementById("matchHistory");
 const API_BASE = 
   (window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1")
     ? "http://localhost:5000"
-    : "https://login-system-r1ax.onrender.com";
+    : "https://contra-backend-tifu.onrender.com";
 
 function authHeader() {
   const token = localStorage.getItem("token") || "";
